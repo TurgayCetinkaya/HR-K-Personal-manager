@@ -1,0 +1,29 @@
+import time
+
+class TimeTracking:
+    def __init__(self, employee):
+        self.employee = employee
+        self.work_hours = 0
+        self.overtime_hours = 0
+        self.start_time = None
+
+    def start_work(self):
+        self.start_time = time.time()
+        return f"Work started for {self.employee.first_name} {self.employee.last_name}."
+
+    def end_work(self):
+        if self.start_time:
+            end_time = time.time()
+            worked_seconds = end_time - self.start_time
+            worked_hours = worked_seconds / 3600  # Convert to hours
+            self.work_hours += worked_hours
+            self.start_time = None
+            return f"Work ended for {self.employee.first_name} {self.employee.last_name}. Worked for {worked_hours:.2f} hours."
+        return "Work has not been started."
+
+    def log_overtime(self, hours):
+        self.overtime_hours += hours
+        return f"{hours} overtime hours logged for {self.employee.first_name} {self.employee.last_name}."
+
+    def display_work_hours(self):
+        return f"Total hours worked by {self.employee.first_name} {self.employee.last_name}: {self.work_hours:.2f} hours, Overtime: {self.overtime_hours:.2f} hours."
