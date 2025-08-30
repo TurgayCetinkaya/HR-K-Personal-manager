@@ -1,0 +1,11 @@
+class MotivationProgram:
+    def __init__(self, employee):
+        self.employee = employee
+        self.rewards = []
+
+    def add_reward(self, reward_name, value):
+        self.rewards.append({"reward_name": reward_name, "value": value})
+        return f"Reward '{reward_name}' added to {self.employee.first_name} {self.employee.last_name} worth {value} TL."
+
+    def display_rewards(self):
+        return f"Rewards for {self.employee.first_name} {self.employee.last_name}: " + "\n".join([f"{reward['reward_name']} worth {reward['value']} TL" for reward in self.rewards])
