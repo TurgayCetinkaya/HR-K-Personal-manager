@@ -1,0 +1,7 @@
+class AdvancedReport:
+    @staticmethod
+    def generate_department_report(employees, department):
+        report = f"Department Report for {department}:\n"
+        for emp in employees:
+            report += f"{emp.first_name} {emp.last_name} - Position: {emp.position} - Salary: {emp.salary} TL\n"
+        return report
