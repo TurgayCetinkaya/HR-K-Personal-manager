@@ -1,0 +1,11 @@
+class LegalCompliance:
+    def __init__(self, employee):
+        self.employee = employee
+        self.legal_compliant = True  # Assume compliant by default
+
+    def update_compliance_status(self, compliant):
+        self.legal_compliant = compliant
+        return f"{self.employee.first_name} {self.employee.last_name}'s legal compliance status updated to {'Compliant' if compliant else 'Non-Compliant'}."
+
+    def display_compliance_status(self):
+        return f"{self.employee.first_name} {self.employee.last_name} - Legal Compliance: {'Compliant' if self.legal_compliant else 'Non-Compliant'}"
