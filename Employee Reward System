@@ -1,0 +1,23 @@
+class EmployeeReward:
+    def __init__(self, employee_name, performance_score):
+        self.employee_name = employee_name
+        self.performance_score = performance_score
+
+    def calculate_bonus(self):
+        if self.performance_score >= 85:
+            return 1000  # Yüksek performans için bonus
+        elif self.performance_score >= 70:
+            return 500  # Orta performans için bonus
+        else:
+            return 0  # Düşük performans için bonus yok
+
+    def display_reward(self):
+        bonus = self.calculate_bonus()
+        return f"{self.employee_name} için bonus: {bonus} TL"
+
+# Ödül ve teşvik hesaplama
+reward1 = EmployeeReward("Murat Yılmaz", 90)
+reward2 = EmployeeReward("Ayşe Akın", 75)
+
+print(reward1.display_reward())
+print(reward2.display_reward())
