@@ -1,0 +1,17 @@
+class AICandidateSelection:
+    def __init__(self):
+        self.candidates = {}
+
+    def add_candidate(self, candidate_name, interview_score):
+        self.candidates[candidate_name] = interview_score
+        return f"Candidate {candidate_name} added with interview score: {interview_score}"
+
+    def evaluate_candidate(self, candidate_name):
+        if candidate_name in self.candidates:
+            score = self.candidates[candidate_name]
+            if score >= 8:
+                return f"Candidate {candidate_name} is highly recommended."
+            elif score >= 5:
+                return f"Candidate {candidate_name} is recommended with reservations."
+            return f"Candidate {candidate_name} is not recommended."
+        return "Candidate not found."
