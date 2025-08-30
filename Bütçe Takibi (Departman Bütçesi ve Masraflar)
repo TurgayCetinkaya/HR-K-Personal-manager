@@ -1,0 +1,16 @@
+class DepartmentBudget:
+    def __init__(self, department_name, initial_budget):
+        self.department_name = department_name
+        self.budget = initial_budget
+        self.expenses = []
+
+    def add_expense(self, expense_name, amount):
+        if amount <= self.budget:
+            self.budget -= amount
+            self.expenses.append({"expense_name": expense_name, "amount": amount})
+            return f"{expense_name} expense of {amount} TL added to {self.department_name} department."
+        else:
+            return f"{self.department_name} department doesn't have enough budget for {expense_name}."
+
+    def display_budget_status(self):
+        return f"{self.department_name} Department Budget Status: Remaining Budget = {self.budget} TL\nExpenses: " + "\n".join([f"{expense['expense_name']}: {expense['amount']} TL" for expense in self.expenses])
