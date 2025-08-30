@@ -1,2 +1,1 @@
-# Yaban2
-Halka açık kod depo
+Herkese açık kod deposu
