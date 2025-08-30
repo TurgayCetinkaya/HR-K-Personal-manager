@@ -1,0 +1,16 @@
+class HealthAndSafety:
+    def __init__(self, employee):
+        self.employee = employee
+        self.health_checkup = False
+        self.safety_training = False
+
+    def complete_health_checkup(self):
+        self.health_checkup = True
+        return f"{self.employee.first_name} {self.employee.last_name} has completed the health check-up."
+
+    def complete_safety_training(self):
+        self.safety_training = True
+        return f"{self.employee.first_name} {self.employee.last_name} has completed the safety training."
+
+    def display_status(self):
+        return f"Health Checkup: {'Completed' if self.health_checkup else 'Pending'}, Safety Training: {'Completed' if self.safety_training else 'Pending'}"
