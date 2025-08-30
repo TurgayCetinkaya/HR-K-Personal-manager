@@ -1,0 +1,11 @@
+class Report:
+    @staticmethod
+    def generate_employee_report(employee, payroll, leave):
+        return f"""
+        Employee Report for {employee.first_name} {employee.last_name}:
+        -----------------------------------------------
+        Position: {employee.position}
+        Salary: {payroll.base_salary} TL
+        Net Salary: {payroll.calculate_net_salary()} TL
+        Remaining Leave Days: {leave.leave_balance}
+        """
