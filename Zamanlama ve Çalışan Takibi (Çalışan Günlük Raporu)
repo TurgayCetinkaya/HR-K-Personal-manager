@@ -1,0 +1,12 @@
+class DailyActivityReport:
+    def __init__(self, employee, date):
+        self.employee = employee
+        self.date = date
+        self.activities = []
+
+    def log_activity(self, activity):
+        self.activities.append(activity)
+        return f"{self.employee.first_name} {self.employee.last_name} logged activity: '{activity}' on {self.date}"
+
+    def display_report(self):
+        return f"Daily Report for {self.employee.first_name} {self.employee.last_name} on {self.date}:\n" + "\n".join(self.activities)
