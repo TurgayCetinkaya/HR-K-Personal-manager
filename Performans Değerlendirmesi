@@ -1,0 +1,15 @@
+class PerformanceReview:
+    def __init__(self, employee, review_date):
+        self.employee = employee
+        self.review_date = review_date
+        self.performance_score = None
+
+    def evaluate_performance(self, score):
+        if 1 <= score <= 10:
+            self.performance_score = score
+            return f"{self.employee.first_name} {self.employee.last_name}'s performance score is {score}."
+        else:
+            return "Geçerli bir puan girin (1-10 arası)."
+
+    def display_performance(self):
+        return f"{self.employee.first_name} {self.employee.last_name} Performance: {self.performance_score} (Reviewed on {self.review_date})"
