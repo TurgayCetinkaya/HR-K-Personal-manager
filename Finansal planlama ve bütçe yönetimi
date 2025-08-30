@@ -1,0 +1,24 @@
+class BudgetManager:
+    def __init__(self, employee_name, salary):
+        self.employee_name = employee_name
+        self.salary = salary
+        self.expenses = {}
+
+    def add_expense(self, category, amount):
+        self.expenses[category] = self.expenses.get(category, 0) + amount
+
+    def calculate_remaining_budget(self):
+        total_expenses = sum(self.expenses.values())
+        return self.salary - total_expenses
+
+    def display_budget(self):
+        remaining_budget = self.calculate_remaining_budget()
+        return (f"{self.employee_name} için kalan bütçe: {remaining_budget} TL, "
+                f"Toplam Giderler: {sum(self.expenses.values())} TL")
+
+# Bütçe yönetimi
+budget1 = BudgetManager("Murat Yılmaz", 7000)
+budget1.add_expense("Yiyecek", 1500)
+budget1.add_expense("Kira", 2000)
+
+print(budget1.display_budget())
