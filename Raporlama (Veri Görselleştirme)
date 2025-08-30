@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+
+class ReportVisualizer:
+    def __init__(self):
+        pass
+
+    def plot_salary_distribution(self, employees):
+        salaries = [emp.salary for emp in employees]
+        plt.hist(salaries, bins=10, color='skyblue', edgecolor='black')
+        plt.title('Salary Distribution')
+        plt.xlabel('Salary (TL)')
+        plt.ylabel('Number of Employees')
+        plt.show()
+
+# Görselleştirme Kullanımı
+report_visualizer = ReportVisualizer()
+report_visualizer.plot_salary_distribution([emp1, emp2])  # Example usage with employees
