@@ -1,0 +1,11 @@
+class EmployeeFeedback:
+    def __init__(self, employee):
+        self.employee = employee
+        self.feedbacks = []
+
+    def give_feedback(self, feedback):
+        self.feedbacks.append(feedback)
+        return f"Feedback given to {self.employee.first_name} {self.employee.last_name}: {feedback}"
+
+    def view_feedback(self):
+        return f"Feedback for {self.employee.first_name} {self.employee.last_name}:\n" + "\n".join(self.feedbacks)
