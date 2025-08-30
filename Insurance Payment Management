@@ -1,0 +1,19 @@
+class InsurancePayment:
+    def __init__(self, policy_holder, policy_type, payment_amount, payment_date):
+        self.policy_holder = policy_holder
+        self.policy_type = policy_type
+        self.payment_amount = payment_amount
+        self.payment_date = payment_date
+
+    def display_payment_details(self):
+        return (f"Poliçe Sahibi: {self.policy_holder}, "
+                f"Poliçe Türü: {self.policy_type}, "
+                f"Ödeme Tutarı: {self.payment_amount} TL, "
+                f"Ödeme Tarihi: {self.payment_date}")
+
+# Sigorta ödeme işlemleri
+payment1 = InsurancePayment("Ali Veli", "Sağlık Sigortası", 1200, "2025-01-01")
+payment2 = InsurancePayment("Ayşe Yılmaz", "Araç Sigortası", 2500, "2025-02-01")
+
+print(payment1.display_payment_details())
+print(payment2.display_payment_details())
