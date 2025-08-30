@@ -1,0 +1,13 @@
+class Payroll:
+    def __init__(self, employee, base_salary, bonuses, deductions):
+        self.employee = employee
+        self.base_salary = base_salary
+        self.bonuses = bonuses
+        self.deductions = deductions
+
+    def calculate_net_salary(self):
+        return self.base_salary + self.bonuses - self.deductions
+
+    def display_payroll(self):
+        net_salary = self.calculate_net_salary()
+        return f"{self.employee.first_name} {self.employee.last_name}'s Net Salary: {net_salary} TL"
