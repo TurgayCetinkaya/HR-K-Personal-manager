@@ -1,0 +1,21 @@
+class DecisionSupportSystem:
+    def __init__(self):
+        self.performance_data = {}
+
+    def log_performance_data(self, employee, performance_score):
+        self.performance_data[employee.employee_id] = performance_score
+        return f"Performance data for {employee.first_name} {employee.last_name} logged."
+
+    def generate_performance_report(self):
+        report = "Performance Report:\n"
+        for employee_id, score in self.performance_data.items():
+            report += f"Employee ID: {employee_id}, Performance Score: {score}\n"
+        return report
+
+    def suggest_actions(self):
+        avg_score = sum(self.performance_data.values()) / len(self.performance_data)
+        if avg_score < 5:
+            return "Consider conducting performance improvement plans for underperforming employees."
+        elif avg_score >= 7:
+            return "Excellent performance overall. Consider offering bonuses or promotions."
+        return "Average performance. No immediate action required."
