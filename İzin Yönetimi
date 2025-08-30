@@ -1,0 +1,14 @@
+class LeaveManagement:
+    def __init__(self, employee):
+        self.employee = employee
+        self.leave_balance = 20  # Yıllık izin gün sayısı
+
+    def take_leave(self, days):
+        if days <= self.leave_balance:
+            self.leave_balance -= days
+            return f"{self.employee.first_name} {self.employee.last_name} {days} gün izin kullandı."
+        else:
+            return f"{self.employee.first_name} {self.employee.last_name} yeterli izne sahip değil."
+
+    def display_leave_balance(self):
+        return f"{self.employee.first_name} {self.employee.last_name}'s Remaining Leave: {self.leave_balance} days"
