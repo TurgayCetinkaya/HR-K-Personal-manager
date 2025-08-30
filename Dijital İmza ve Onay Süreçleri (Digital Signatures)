@@ -1,0 +1,15 @@
+import uuid
+
+class DigitalSignature:
+    def __init__(self, employee):
+        self.employee = employee
+        self.signature = None
+
+    def generate_signature(self):
+        self.signature = str(uuid.uuid4())  # Unique signature generated
+        return f"{self.employee.first_name} {self.employee.last_name}'s digital signature: {self.signature}"
+
+    def verify_signature(self, signature):
+        if self.signature == signature:
+            return "Signature verified."
+        return "Signature mismatch."
