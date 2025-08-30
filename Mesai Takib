@@ -1,0 +1,14 @@
+class OvertimeManagement:
+    def __init__(self, employee):
+        self.employee = employee
+        self.overtime_hours = 0
+
+    def log_overtime(self, hours):
+        self.overtime_hours += hours
+        return f"{self.employee.first_name} {self.employee.last_name} logged {hours} overtime hours."
+
+    def calculate_overtime_payment(self, hourly_rate):
+        return self.overtime_hours * hourly_rate
+
+    def display_overtime(self):
+        return f"{self.employee.first_name} {self.employee.last_name} has {self.overtime_hours} overtime hours."
