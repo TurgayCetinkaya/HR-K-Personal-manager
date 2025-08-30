@@ -1,0 +1,17 @@
+class TaskManagement:
+    def __init__(self, employee):
+        self.employee = employee
+        self.tasks = {}
+
+    def assign_task(self, task_name, deadline):
+        self.tasks[task_name] = {"deadline": deadline, "status": "Assigned"}
+        return f"Task '{task_name}' assigned to {self.employee.first_name} {self.employee.last_name} with a deadline of {deadline}."
+
+    def update_task_status(self, task_name, status):
+        if task_name in self.tasks:
+            self.tasks[task_name]["status"] = status
+            return f"Task '{task_name}' status updated to {status}."
+        return "Task not found."
+
+    def display_tasks(self):
+        return f"Tasks for {self.employee.first_name} {self.employee.last_name}: " + "\n".join([f"{task}: {details['status']} (Deadline: {details['deadline']})" for task, details in self.tasks.items()])
