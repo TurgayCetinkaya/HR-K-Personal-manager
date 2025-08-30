@@ -1,0 +1,11 @@
+class TrainingManagement:
+    def __init__(self, employee):
+        self.employee = employee
+        self.training_sessions = []
+
+    def add_training(self, training_name, completion_date):
+        self.training_sessions.append({"training": training_name, "date": completion_date})
+        return f"{self.employee.first_name} {self.employee.last_name} completed training: {training_name} on {completion_date}."
+
+    def display_trainings(self):
+        return f"Training sessions for {self.employee.first_name} {self.employee.last_name}: {', '.join([session['training'] for session in self.training_sessions])}"
