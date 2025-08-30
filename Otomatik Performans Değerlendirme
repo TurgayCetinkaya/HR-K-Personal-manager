@@ -1,0 +1,22 @@
+class AutomatedPerformanceEvaluation:
+    def __init__(self, employee):
+        self.employee = employee
+        self.criteria = {
+            "project_completion": 0,
+            "customer_satisfaction": 0,
+            "teamwork": 0,
+            "time_management": 0
+        }
+        self.total_score = 0
+
+    def evaluate_criteria(self, project_completion, customer_satisfaction, teamwork, time_management):
+        self.criteria["project_completion"] = project_completion
+        self.criteria["customer_satisfaction"] = customer_satisfaction
+        self.criteria["teamwork"] = teamwork
+        self.criteria["time_management"] = time_management
+
+        self.total_score = sum(self.criteria.values()) / len(self.criteria)
+        return f"{self.employee.first_name} {self.employee.last_name}'s Total Performance Score: {self.total_score}"
+
+    def get_performance_summary(self):
+        return f"Performance Summary for {self.employee.first_name} {self.employee.last_name}:\n" + "\n".join([f"{k}: {v}" for k, v in self.criteria.items()])
