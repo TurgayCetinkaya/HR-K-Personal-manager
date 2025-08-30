@@ -1,0 +1,15 @@
+class ProjectPerformance:
+    def __init__(self, employee, project_name):
+        self.employee = employee
+        self.project_name = project_name
+        self.performance_score = None
+
+    def evaluate_project_performance(self, score):
+        if 1 <= score <= 10:
+            self.performance_score = score
+            return f"{self.employee.first_name} {self.employee.last_name} evaluated for project '{self.project_name}' with score {score}."
+        else:
+            return "Geçerli bir puan girin (1-10 arası)."
+
+    def display_project_performance(self):
+        return f"{self.employee.first_name} {self.employee.last_name}'s Performance in '{self.project_name}' Project: {self.performance_score}"
