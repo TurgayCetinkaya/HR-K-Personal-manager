@@ -1,0 +1,21 @@
+import datetime
+
+class TrainingScheduler:
+    def __init__(self):
+        self.trainings = {}
+
+    def schedule_training(self, training_name, date):
+        self.trainings[training_name] = {"date": date, "status": "Scheduled"}
+        return f"Training '{training_name}' scheduled for {date}."
+
+    def notify_training(self, training_name):
+        current_date = datetime.date.today()
+        if training_name in self.trainings:
+            training_date = self.trainings[training_name]["date"]
+            if training_date == current_date:
+                return f"Reminder: Training '{training_name}' is today!"
+            elif training_date < current_date:
+                return f"Training '{training_name}' has passed."
+            else:
+                return f"Training '{training_name}' is scheduled for {training_date}."
+        return "Training not found."
