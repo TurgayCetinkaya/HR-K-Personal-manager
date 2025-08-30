@@ -1,0 +1,21 @@
+class PerformanceEvaluation:
+    def __init__(self, employee_name, performance_score):
+        self.employee_name = employee_name
+        self.performance_score = performance_score
+
+    def evaluate_performance(self):
+        if self.performance_score >= 90:
+            return f"{self.employee_name}: Mükemmel Performans"
+        elif self.performance_score >= 75:
+            return f"{self.employee_name}: İyi Performans"
+        elif self.performance_score >= 60:
+            return f"{self.employee_name}: Orta Performans"
+        else:
+            return f"{self.employee_name}: Düşük Performans"
+
+# Performans değerlendirmesi
+evaluation1 = PerformanceEvaluation("Murat Yılmaz", 92)
+evaluation2 = PerformanceEvaluation("Ayşe Akın", 75)
+
+print(evaluation1.evaluate_performance())
+print(evaluation2.evaluate_performance())
