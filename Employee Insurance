@@ -1,0 +1,19 @@
+class EmployeeInsurance:
+    def __init__(self, employee_name, salary):
+        self.employee_name = employee_name
+        self.salary = salary
+
+    def calculate_insurance(self):
+        # Sigorta primi, maaşın %5'i olarak hesaplanabilir
+        return self.salary * 0.05
+
+    def display_insurance_details(self):
+        insurance = self.calculate_insurance()
+        return f"{self.employee_name}'ın sigorta primi: {insurance} TL"
+
+# Sigorta prim hesaplama
+insurance1 = EmployeeInsurance("Murat Yılmaz", 7000)
+insurance2 = EmployeeInsurance("Ayşe Akın", 8500)
+
+print(insurance1.display_insurance_details())
+print(insurance2.display_insurance_details())
