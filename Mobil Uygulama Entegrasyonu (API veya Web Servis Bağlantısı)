@@ -1,0 +1,17 @@
+import requests
+
+class HRApiIntegration:
+    def __init__(self):
+        self.base_url = "https://api.hr-system.com"
+
+    def get_employee_data(self, employee_id):
+        response = requests.get(f"{self.base_url}/employee/{employee_id}")
+        if response.status_code == 200:
+            return response.json()
+        return "Failed to fetch employee data."
+
+    def update_employee_salary(self, employee_id, new_salary):
+        response = requests.put(f"{self.base_url}/employee/{employee_id}/salary", data={"salary": new_salary})
+        if response.status_code == 200:
+            return "Salary updated successfully."
+        return "Failed to update salary."
