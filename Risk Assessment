@@ -1,0 +1,19 @@
+class RiskAssessment:
+    def __init__(self, policy_holder, risk_level):
+        self.policy_holder = policy_holder
+        self.risk_level = risk_level
+
+    def evaluate_risk(self):
+        if self.risk_level >= 8:
+            return f"{self.policy_holder}: Yüksek Risk"
+        elif self.risk_level >= 5:
+            return f"{self.policy_holder}: Orta Risk"
+        else:
+            return f"{self.policy_holder}: Düşük Risk"
+
+# Risk değerlendirmesi
+risk1 = RiskAssessment("Ali Veli", 9)
+risk2 = RiskAssessment("Ayşe Yılmaz", 6)
+
+print(risk1.evaluate_risk())
+print(risk2.evaluate_risk())
