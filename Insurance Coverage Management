@@ -1,0 +1,17 @@
+class InsuranceCoverage:
+    def __init__(self, policy_holder, coverage_type, coverage_limit):
+        self.policy_holder = policy_holder
+        self.coverage_type = coverage_type
+        self.coverage_limit = coverage_limit
+
+    def display_coverage(self):
+        return (f"Poliçe Sahibi: {self.policy_holder}, "
+                f"Kapsam Türü: {self.coverage_type}, "
+                f"Kapsam Limiti: {self.coverage_limit} TL")
+
+# Sigorta kapsamı yönetimi
+coverage1 = InsuranceCoverage("Ali Veli", "Sağlık Sigortası", 100000)
+coverage2 = InsuranceCoverage("Ayşe Yılmaz", "Araç Sigortası", 200000)
+
+print(coverage1.display_coverage())
+print(coverage2.display_coverage())
