@@ -1,0 +1,28 @@
+import hashlib
+
+class SecuritySystem:
+    def __init__(self):
+        self.users = {}
+        self.roles = {}
+
+    def add_user(self, username, password, role):
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
+        self.users[username] = {"password": hashed_password, "role": role}
+
+    def check_user(self, username, password):
+        if username in self.users:
+            hashed_password = hashlib.sha256(password.encode()).hexdigest()
+            if self.users[username]["password"] == hashed_password:
+                return True
+        return False
+
+    def assign_role(self, username, role):
+        if username in self.users:
+            self.users[username]["role"] = role
+            return f"Role '{role}' assigned to {username}."
+        return "User not found."
+    
+    def check_role(self, username):
+        if username in self.users:
+            return self.users[username]["role"]
+        return "User not found."
