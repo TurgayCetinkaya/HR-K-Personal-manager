@@ -1,0 +1,21 @@
+class InsurancePolicy:
+    def __init__(self, policy_holder, policy_type, start_date, end_date, premium_amount):
+        self.policy_holder = policy_holder
+        self.policy_type = policy_type
+        self.start_date = start_date
+        self.end_date = end_date
+        self.premium_amount = premium_amount
+
+    def display_policy(self):
+        return (f"Poliçe Sahibi: {self.policy_holder}, "
+                f"Poliçe Türü: {self.policy_type}, "
+                f"Başlangıç Tarihi: {self.start_date}, "
+                f"Bitiş Tarihi: {self.end_date}, "
+                f"Prim Miktarı: {self.premium_amount} TL")
+
+# Sigorta poliçesi oluşturma
+policy1 = InsurancePolicy("Ali Veli", "Sağlık Sigortası", "2025-01-01", "2025-12-31", 1200)
+policy2 = InsurancePolicy("Ayşe Yılmaz", "Araç Sigortası", "2025-01-01", "2025-12-31", 2500)
+
+print(policy1.display_policy())
+print(policy2.display_policy())
