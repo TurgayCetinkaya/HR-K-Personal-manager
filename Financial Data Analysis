@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+class FinancialDataAnalysis:
+    def __init__(self, data):
+        self.data = data
+
+    def generate_report(self):
+        categories = list(self.data.keys())
+        values = list(self.data.values())
+
+        plt.bar(categories, values)
+        plt.title("Çalışan Finansal Raporu")
+        plt.xlabel("Çalışanlar")
+        plt.ylabel("Miktar")
+        plt.show()
+
+# Finansal analiz
+financial_data = {"Murat Yılmaz": 7000, "Ayşe Akın": 8500, "Ali Veli": 5000}
+analysis = FinancialDataAnalysis(financial_data)
+analysis.generate_report()
