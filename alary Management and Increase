@@ -1,0 +1,25 @@
+class SalaryIncrease:
+    def __init__(self, employee_name, current_salary, performance_score):
+        self.employee_name = employee_name
+        self.current_salary = current_salary
+        self.performance_score = performance_score
+
+    def calculate_salary_increase(self):
+        if self.performance_score >= 90:
+            return self.current_salary * 0.1  # Yüksek performans için %10 artış
+        elif self.performance_score >= 75:
+            return self.current_salary * 0.05  # Orta performans için %5 artış
+        else:
+            return 0  # Düşük performans için maaş artışı yok
+
+    def display_new_salary(self):
+        increase = self.calculate_salary_increase()
+        new_salary = self.current_salary + increase
+        return f"{self.employee_name}'ın yeni maaşı: {new_salary} TL (Artış: {increase} TL)"
+
+# Maaş artışı hesaplama
+salary1 = SalaryIncrease("Murat Yılmaz", 7000, 95)
+salary2 = SalaryIncrease("Ayşe Akın", 8500, 80)
+
+print(salary1.display_new_salary())
+print(salary2.display_new_salary())
