@@ -1,0 +1,16 @@
+class LeaveManagement:
+    def __init__(self, employee):
+        self.employee = employee
+        self.leave_balance = {"Annual": 20, "Sick": 10, "Special": 5}
+
+    def take_leave(self, leave_type, days):
+        if leave_type not in self.leave_balance:
+            return "Geçersiz izin türü."
+        if days <= self.leave_balance[leave_type]:
+            self.leave_balance[leave_type] -= days
+            return f"{self.employee.first_name} {self.employee.last_name} {days} days of {leave_type} leave taken."
+        else:
+            return f"{self.employee.first_name} {self.employee.last_name} doesn't have enough {leave_type} leave balance."
+
+    def display_leave_balance(self):
+        return f"{self.employee.first_name} {self.employee.last_name}'s Leave Balances:\n" + "\n".join([f"{leave}: {days} days" for leave, days in self.leave_balance.items()])
