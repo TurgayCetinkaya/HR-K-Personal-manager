@@ -1,0 +1,14 @@
+class Manager:
+    def __init__(self, manager_id, first_name, last_name, department):
+        self.manager_id = manager_id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.department = department
+        self.employees = []
+
+    def assign_employee(self, employee):
+        self.employees.append(employee)
+        return f"{self.first_name} {self.last_name} assigned to {employee.first_name} {employee.last_name}."
+
+    def provide_feedback(self, employee, feedback):
+        return f"{self.first_name} {self.last_name} provided feedback to {employee.first_name} {employee.last_name}: '{feedback}'"
