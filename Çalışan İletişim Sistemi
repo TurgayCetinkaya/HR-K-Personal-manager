@@ -1,0 +1,11 @@
+class MessagingSystem:
+    def __init__(self):
+        self.messages = []
+
+    def send_message(self, sender, receiver, message):
+        self.messages.append({"from": sender, "to": receiver, "message": message})
+        return f"Message from {sender.first_name} to {receiver.first_name}: {message}"
+
+    def view_messages(self, employee):
+        employee_messages = [msg for msg in self.messages if msg["to"] == employee]
+        return [f"From {msg['from'].first_name}: {msg['message']}" for msg in employee_messages]
