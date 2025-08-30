@@ -1,0 +1,22 @@
+class LeaveTracker:
+    def __init__(self, employee_name, total_leaves):
+        self.employee_name = employee_name
+        self.total_leaves = total_leaves
+        self.used_leaves = 0
+
+    def request_leave(self, leave_days):
+        if leave_days <= (self.total_leaves - self.used_leaves):
+            self.used_leaves += leave_days
+            print(f"{leave_days} gün izin onaylandı.")
+        else:
+            print("Yetersiz izin hakkı!")
+
+    def display_leave_balance(self):
+        return f"{self.employee_name}'ın kalan izin hakkı: {self.total_leaves - self.used_leaves} gün"
+
+# İzin takip
+leave_tracker = LeaveTracker("Murat Yılmaz", 30)
+leave_tracker.request_leave(5)
+leave_tracker.request_leave(10)
+
+print(leave_tracker.display_leave_balance())
